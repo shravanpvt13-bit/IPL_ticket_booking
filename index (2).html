@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        nav a {
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+            margin: 0 5px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>IPL Ticket Booking</h1>
+
+    <hr>
+
+    <nav>
+        <a onclick="showTab('home')">Home</a> |
+        <a onclick="showTab('matches')">Matches</a> |
+        <a onclick="showTab('book')">Book Ticket</a> |
+        <a onclick="showTab('bookings')">My Bookings</a> |
+        <a onclick="showTab('guidelines')">Guidelines</a>
+    </nav>
+
+    <hr>
+
+    <!-- HOME TAB -->
+    <div id="home" class="tab-content active">
+        <h2>Experience The Stadium Energy Live!</h2>
+        <p>Get ready for the excitement of IPL 2026. Book your tickets and support your favourite team!</p>
+
+        <p><a onclick="showTab('matches')">View Schedule</a></p>
+        <p><a onclick="showTab('book')">Book Ticket</a></p>
+
+        <hr>
+
+        <h2>About IPL 2026</h2>
+        <p>IPL is an exciting cricket tournament.</p>
+
+        <h3>Popular Teams</h3>
+        <ul>
+            <li>Chennai Super Kings</li>
+            <li>Royal Challengers Bangalore</li>
+            <li>Mumbai Indians</li>
+            <li>Sunrisers Hyderabad</li>
+            <li>Punjab Kings</li>
+        </ul>
+
+        <h3>Major Match Venues</h3>
+        <ul>
+            <li>Chepauk Stadium</li>
+            <li>M. Chinnaswamy Stadium</li>
+            <li>Wankhede Stadium</li>
+            <li>Rajiv Gandhi Stadium</li>
+        </ul>
+    </div>
+
+    <!-- MATCHES TAB -->
+    <div id="matches" class="tab-content">
+        <h2>IPL Match Schedule</h2>
+
+        <h3>RCB vs CSK</h3>
+        <p>Date: 25 August 2026</p>
+        <p>Time: 7:30 PM</p>
+        <p>Venue: M. Chinnaswamy Stadium</p>
+        <p><a onclick="showTab('book')">Book Ticket</a></p>
+
+        <hr>
+
+        <h3>MI vs SRH</h3>
+        <p>Date: 27 August 2026</p>
+        <p>Time: 7:30 PM</p>
+        <p>Venue: Wankhede Stadium</p>
+        <p><a onclick="showTab('book')">Book Ticket</a></p>
+
+        <hr>
+
+        <h3>RR vs KKR</h3>
+        <p>Date: 29 August 2026</p>
+        <p>Time: 7:30 PM</p>
+        <p>Venue: Sawai Mansingh Stadium</p>
+        <p><a onclick="showTab('book')">Book Ticket</a></p>
+    </div>
+
+    <!-- BOOK TICKET TAB -->
+    <div id="book" class="tab-content">
+        <h2>Enter Your Details</h2>
+
+        <form action="#" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <br><br>
+
+            <label for="mobile">Mobile Number:</label><br>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+
+            <br><br>
+
+            <label for="match">Select Match:</label><br>
+            <select id="match" name="match" required>
+                <option value="" disabled selected>-- Choose a match --</option>
+                <option value="rcb-csk">RCB vs CSK</option>
+                <option value="mi-srh">MI vs SRH</option>
+                <option value="rr-kkr">RR vs KKR</option>
+            </select>
+
+            <br><br>
+
+            <label for="category">Ticket Category:</label><br>
+            <select id="category" name="category" required>
+                <option value="general">General</option>
+                <option value="premium">Premium</option>
+                <option value="vip">VIP</option>
+            </select>
+
+            <br><br>
+
+            <label for="tickets">Number of Tickets:</label><br>
+            <input type="number" id="tickets" name="tickets" min="1" max="10" required>
+
+            <br><br>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+
+        <br>
+        <p>Thank you for choosing IPL Ticket Booking!</p>
+    </div>
+
+    <!-- MY BOOKINGS TAB -->
+    <div id="bookings" class="tab-content">
+        <h2>Booking Details</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Match</th>
+                    <th>Category</th>
+                    <th>Tickets</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>RCB vs CSK</td>
+                    <td>General</td>
+                    <td>1</td>
+                    <td>1200</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <p>Thank you for booking your tickets!</p>
+    </div>
+
+    <!-- GUIDELINES TAB -->
+    <div id="guidelines" class="tab-content">
+        <h2>IPL Ticket Booking Guidelines</h2>
+
+        <h3>Ticket Booking Rules</h3>
+        <ul>
+            <li>Enter your correct name.</li>
+            <li>Provide a valid email address.</li>
+            <li>Enter your mobile number.</li>
+            <li>Select the correct match.</li>
+            <li>Choose the number of tickets.</li>
+        </ul>
+
+        <hr>
+
+        <h3>Stadium Entry Rules</h3>
+        <ul>
+            <li>Carry your valid ticket.</li>
+            <li>Carry your ID proof.</li>
+            <li>Reach the stadium early.</li>
+            <li>Follow stadium instructions.</li>
+        </ul>
+
+        <hr>
+
+        <h3>Prohibited Items</h3>
+        <ul>
+            <li>Weapons</li>
+            <li>Glass bottles</li>
+            <li>Fireworks</li>
+            <li>Large bags</li>
+            <li>Laser pointers</li>
+        </ul>
+
+        <hr>
+
+        <h3>Important Instructions</h3>
+        <ol>
+            <li>Do not share your booking details.</li>
+            <li>Follow security rules.</li>
+            <li>Maintain cleanliness.</li>
+            <li>Respect players and spectators.</li>
+        </ol>
+
+        <hr>
+
+        <h3>Cancellation and Refund</h3>
+        <p>Ticket cancellation and refund depend on the ticket provider.</p>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>IPL Ticket Booking - 2026 | All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
